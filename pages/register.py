@@ -32,23 +32,15 @@ role = st.selectbox(
     placeholder="Select role...",
 )
 
-st.write("You selected:", role)
-
 if role in OPTIONS:
     st.session_state.role = role
-    st.write(st.session_state.role)
+
+st.write("You selected:", st.session_state.role)
 
 agree = st.checkbox("I agree with Terms and Conditions")
-
-st.write("hello")
-
-
-if st.session_state.role is not None:
-    st.session_state.role = role
-    st.session_state.role
 
 st.page_link(
     page="pages/input.py",
     label=":violet[**Next**]",
-    disabled=not(agree)
+    disabled=not(agree) and (st.session_state.role in OPTIONS)
 )
