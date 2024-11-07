@@ -19,9 +19,14 @@ st.text_input(
     type="password"
 )
 
+if "role" not in st.session_state:
+    st.session_state.role = None
+
+OPTIONS = ("Reader", "Business", "Media")
+
 role = st.selectbox(
     label="Select user role",
-    options=("Reader", "Business", "Media"),
+    options=OPTIONS,
     index=None,
     help="Choose *Reader* if you want to evaluate other's content.\n Choose *Business* if your company hired ByeBias.\n Choose *Media* if you are a content creator.",
     placeholder="Select role...",
@@ -29,13 +34,18 @@ role = st.selectbox(
 
 st.write("You selected:", role)
 
-agree = st.checkbox("I agree with Terms and Conditions")
-
-if "role" not in st.session_state:
-    st.session_state.role = None
-elif st.session_state.role is not None:
+if role in OPTIONS:
     st.session_state.role = role
     st.write(st.session_state.role)
+
+agree = st.checkbox("I agree with Terms and Conditions")
+
+st.write("hello")
+
+
+if st.session_state.role is not None:
+    st.session_state.role = role
+    st.session_state.role
 
 st.page_link(
     page="pages/input.py",
