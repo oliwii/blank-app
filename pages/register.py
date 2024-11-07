@@ -19,7 +19,7 @@ st.text_input(
     type="password"
 )
 
-option = st.selectbox(
+role = st.selectbox(
     label="Select user role",
     options=("Reader", "Business", "Media"),
     index=None,
@@ -27,9 +27,18 @@ option = st.selectbox(
     placeholder="Select role...",
 )
 
-st.write("You selected:", option)
+st.write("You selected:", role)
+
+agree = st.checkbox("I agree with Terms and Conditions")
+
+if "role" not in st.session_state:
+    st.session_state.role = None
+elif st.session_state.role is not None:
+    st.session_state.role = role
+    st.write(st.session_state.role)
 
 st.page_link(
     page="pages/input.py",
-    label=":violet[**Next**]"
+    label=":violet[**Next**]",
+    disabled=not(agree)
 )
