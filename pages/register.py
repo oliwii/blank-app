@@ -42,7 +42,5 @@ agree = st.checkbox("I agree with Terms and Conditions")
 st.page_link(
     page="pages/input.py",
     label=":violet[**Next**]",
-    disabled=not(agree) and (st.session_state.role in OPTIONS)
+    disabled=(not(agree) or (st.session_state.role is None))
 )
-
-st.write(not(agree) and (st.session_state.role in OPTIONS))
