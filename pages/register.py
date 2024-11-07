@@ -44,3 +44,5 @@ st.page_link(
     label=":violet[**Next**]",
     disabled=not(agree) and (st.session_state.role in OPTIONS)
 )
+
+st.write(not(agree) and (st.session_state.role in OPTIONS))
