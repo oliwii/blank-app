@@ -37,6 +37,12 @@ if role in OPTIONS:
 
 st.write("You selected:", st.session_state.role)
 
+if st.session_state.role in ["Business", "Media"]:
+    st.text_input(
+        label="Company",
+        placeholder="La Nación"
+    )
+
 agree = st.checkbox("I agree with Terms and Conditions")
 
 st.page_link(

@@ -2,10 +2,10 @@ import streamlit as st
 
 st.title("Results")
 
-
-st.write(st.session_state.option)
-
+sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
 st.write("Was this answer helpful?")
 selected = st.feedback("thumbs")
 if selected is not None:
-    st.caption("Thank you for the feedback!")
+    st.caption(":violet[Thank you for the feedback!]")
+    if selected == 1:
+        st.balloons()
