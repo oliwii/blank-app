@@ -2,9 +2,19 @@ import streamlit as st
 
 st.title("Insert content")
 
+bias_list = [
+    "Gender",
+    "Racism",
+    "Ageism",
+    "Body type",
+    "Sexuality",
+    "Ideology",
+    "Religion"
+    ]
+
 biases = st.multiselect(
     "What biases are you worried about?",
-    ["Genre","Racism","Ageism", "Body type", "Sexuality", "Ideology", "Religion"],
+    bias_list
 )
 
 st.write("You selected:", biases)
@@ -24,4 +34,49 @@ st.write(f"You wrote {len(txt)} characters.",
 
 if st.button(":material/send: Submit"):
     st.switch_page("pages/output.py")
+
+input_dict = {
+    "BiasList": [
+            {
+                "BiasId": 1,
+                "BiasType": "Gender",
+                "BiasDegree": "Red",
+                "ConfidencePercentage": 80,
+                "FragmentsPresent": {
+                    "items": [
+                        {
+                            "FragmentId": 1,
+                            "FragmentContent": "Los hombres manejan mejor que las mujeres",
+                            "FragmentBiasDegree": "Red",
+                            "Reformulations": {
+                                "items": [
+                                    {
+                                        "ReformulationId": 1,
+                                        "ReformulationLevel": "Weak",
+                                        "AlternativeText": "bla bla bla"
+                                    },
+                                    {
+                                        "ReformulationId": 2,
+                                        "ReformulationLevel": "Medium",
+                                        "AlternativeText": "Bla Bla Bla"
+                                    },
+                                    {
+                                        "ReformulationId": 3,
+                                        "ReformulationLevel": "Strong",
+                                        "AlternativeText": "BLA BLA BLA"
+                                    }
+                                ],
+                            }
+                        }
+                    ]
+                },
+                "Explanation": "Gender bias is a bias defined as ..."
+            }
+        ],
+        "TurningTest": True,
+        "Category": "Politics",
+        "Topic": "Democracy",
+        "Subtopic": "Election Security"
+}
+
 
