@@ -32,7 +32,7 @@ with col2:
         body=":violet[ByeBias] :gray[improves the way you communicate by identifying biases and offering alternatives, ensuring that your message is clear, inclusive, and free from unwanted stereotypes.]"
     )
 with col3:
-    st.markdown("**Can I customize the level of change that :violet[ByeBias] offers?**")
+    st.markdown("**Can I customize the level of modification that :violet[ByeBias] offers?**")
     st.markdown(":gray[Yes!] :violet[ByeBias] :gray[provides various levels of suggestions, from subtle adjustments to more significant changes, allowing you to choose how much you want to modify your content while maintaining your original tone and message.]")
 
 if st.button(":material/mail: Contact Us"):
