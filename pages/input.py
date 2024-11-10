@@ -9,7 +9,8 @@ bias_list = [
     "Body type",
     "Sexuality",
     "Ideology",
-    "Religion"
+    "Religion",
+    "aaa"
     ]
 
 biases = st.multiselect(
