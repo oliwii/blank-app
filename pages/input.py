@@ -10,7 +10,6 @@ bias_list = [
     "Sexuality",
     "Ideology",
     "Religion",
-    "aaa"
     ]
 
 biases = st.multiselect(
