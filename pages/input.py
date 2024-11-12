@@ -1,14 +1,14 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
-from langchain.llms import OpenAI
-from langchain_core.prompts import PromptTemplate
-from langchain_openai.chat_models import ChatOpenAI
-from langchain.chat_models import ChatOpenAI
+#from langchain.llms import OpenAI
+#from langchain_core.prompts import PromptTemplate
+#from langchain_openai.chat_models import ChatOpenAI
+#from langchain.chat_models import ChatOpenAI
 
 st.title("Insert content")
 
-openai_api_key = st.sidebar.text_input(
+openai_api_key = st.text_input(
     "OpenAI API Key",
     type="password"
 )
