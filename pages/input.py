@@ -116,8 +116,10 @@ colour_hex = [
 if st.button(":material/send: Submit"):
     #Set original text in session state
     st.session_state.textinput = original_text
+
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
+    
     barchart(example_bias_dict, bias_level, colour_hex, colour_reference)
     selected_bias = single_pills(example_bias_dict)
     st.write(f"Your selected option: {selected_bias}.")
