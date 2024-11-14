@@ -12,7 +12,7 @@ def single_pills(dictionary):
         selection_mode="single",
         help="Only the biases that have been identified as present are shown."
     )
-    return selection
+    st.markdown(f"Your selected option: {selection}.")
 
 def analysis(bias, bias_analysis_result):
     #Write the item (bias) selected

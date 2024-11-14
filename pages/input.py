@@ -119,9 +119,10 @@ if st.button(":material/send: Submit"):
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
     barchart(example_bias_dict, bias_level, colour_hex, colour_reference)
-    selected_bias=single_pills(example_bias_dict)
+    selected_bias = single_pills(example_bias_dict)
     st.write(f"Your selected option: {selected_bias}.")
-    analysis(selected_bias, example_bias_dict)
+    if selected_bias is not None:
+        analysis(selected_bias, example_bias_dict)
     turing_test(example_bias_dict)
 
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
