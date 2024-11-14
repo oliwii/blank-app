@@ -124,7 +124,8 @@ if st.button(":material/send: Submit"):
     selected_bias = single_pills(example_bias_dict)
     st.write(f"Your selected option: {selected_bias}.")
     if selected_bias is not None:
-        analysis(selected_bias, example_bias_dict)
+        st.write(selected_bias)
+        #analysis(selected_bias, example_bias_dict)
     turing_test(example_bias_dict)
     sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
     st.markdown("#### Was this answer helpful?")
