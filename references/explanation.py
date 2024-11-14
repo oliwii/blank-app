@@ -17,13 +17,17 @@ def single_pills(dictionary):
 
 def analysis(bias, bias_analysis_result):
     #Write the item (bias) selected
+    st.write(bias)
     st.markdown(f"# {bias}")
+
     #Write the description: definition and explanation.
     #dictionary["BiasList"] returns a list with the different biases chosen to analyze.
     #Find the bias selected previously in the BiasList list, and show it's explanation.
     #item in this cycle is a dictionary because BiasList is a list of dictionaries.
-    button_dict={}
+    #button_dict={}
+
     for item in bias_analysis_result["BiasList"]:
+        st.write(item["BiasType"])
         if item["BiasType"] == bias:
             st.markdown(item["Explanation"])
             st.markdown(f"## Fragments where {bias} bias was detected:")
