@@ -28,6 +28,12 @@ register_page = st.Page(
     icon = ":material/person_add:"
 )
 
+settings_page = st.Page(
+    page="pages/settings.py",
+    title = "Settings",
+    icon = ":material/settings:"
+)
+
 input_page = st.Page(
     page = "pages/input.py",
     title = "Insert content",
@@ -47,6 +53,7 @@ pg = st.navigation(
         get_started_page,
         sign_in_page,
         register_page,
+        settings_page,
         input_page,
         output_page
     ]

@@ -28,7 +28,7 @@ role = st.selectbox(
     label="Select user role",
     options=OPTIONS,
     index=None,
-    help="Choose *Reader* if you want to evaluate other's content.\n Choose *Business* if your company hired ByeBias.\n Choose *Media* if you are a content creator.",
+    help="Choose *Reader* if you want to evaluate other's content.\n Choose *Business* if your company hired ByeBias.\n Choose *Media* if you are a content creator.\n",
     placeholder="Select role...",
 )
 
