@@ -50,8 +50,8 @@ The JSON you should return is as follows:
 							"ReformulationLevel": "Complex",
 							"AlternativeText": "alb alb alb"
 						}
-                ]
-            }
+                	]
+            	}
             ],
 			"Explanation": "Gender bias is a bias defined as ..."
 		}

@@ -1,7 +1,7 @@
 import streamlit as st
 from references.prompttemplate import format_prompt
 from references.barchart import barchart
-from references.explanation import explanation
+from references.explanation import single_pills
 from references.turingtest import turing_test
 from langchain.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
@@ -70,6 +70,10 @@ if st.button(":material/send: Submit"):
     format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
     #barchart()
+    #selected_bias=single_pills(diccionario)
+    #st.write(f"Your selected option: {selected_bias}.")
+    #analysis(selected_bias, diccionario)
+
     #explanation()
     #turing_test()
     st.switch_page("pages/output.py")
