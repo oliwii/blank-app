@@ -43,7 +43,7 @@ example_bias_dict = {
 			"Explanation": "Gender bias is a bias defined as ..."
 		}
 	],
-	"TuringTest": True/False,
+	"TuringTest": True,
 	"Category": "Politics",
 	"Topic": "Democracy",
 	"Subtopic": "Election Security"
