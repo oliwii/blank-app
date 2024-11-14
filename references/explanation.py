@@ -16,7 +16,7 @@ def single_pills(dictionary):
     )
     return selection
 
-def analysis(bias, bias_analysis_result, original_text):
+def analysis(bias, bias_analysis_result):
     #Write the item (bias) selected
     st.markdown(f"# {bias}")
     #Write the description: definition and explanation.
@@ -43,8 +43,8 @@ def analysis(bias, bias_analysis_result, original_text):
 #                button_dict[f"{fragment["FragmentId"]},3"]=st.button(label="Apply Complex")
 
 
-def apply(level,bias_analysis_result):
-    st.button()
+#def apply(level,bias_analysis_result):
+#    st.button()
 
                 
 

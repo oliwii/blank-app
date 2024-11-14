@@ -75,4 +75,3 @@ def format_prompt(texto, lista, escala):
             "intensity_scale": escala
         }
     )
-"""

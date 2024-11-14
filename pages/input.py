@@ -2,11 +2,54 @@ import streamlit as st
 #from references.prompttemplate import format_prompt
 from references.barchart import barchart
 from references.explanation import single_pills
+from references.explanation import analysis
 from references.turingtest import turing_test
 #from langchain.llms import OpenAI
 #from langchain_core.prompts import PromptTemplate
 #from langchain_openai.chat_models import ChatOpenAI
 #from langchain.chat_models import ChatOpenAI
+
+example_bias_dict = {
+	"BiasList": [
+		{
+			"BiasId": 1,
+			"BiasType": "Gender",
+			"BiasDegree": "Highly biased",
+			"ConfidencePercentage": 80,
+			"FragmentsPresent": [
+				{
+					"FragmentId": 1,
+					"FragmentContent": "Los hombres manejan mejor que las mujeres",
+					"FragmentBiasDegree": "Highly biased",
+					"Reformulations": [
+						{
+							"ReformulationId": 1,
+							"ReformulationLevel": "Simple",
+							"AlternativeText": "bla bla bla"
+						},
+						{
+							"ReformulationId": 2,
+							"ReformulationLevel": "Medium",
+							"AlternativeText": "lab lab lab"
+						},
+						{
+							"ReformulationId": 3,
+							"ReformulationLevel": "Complex",
+							"AlternativeText": "alb alb alb"
+						}
+                	]
+            	}
+            ],
+			"Explanation": "Gender bias is a bias defined as ..."
+		}
+	],
+	"TuringTest": True/False,
+	"Category": "Politics",
+	"Topic": "Democracy",
+	"Subtopic": "Election Security"
+}
+
+###########
 
 st.title("Insert content")
 
@@ -69,53 +112,11 @@ if st.button(":material/send: Submit"):
     st.session_state.textinput = original_text
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
-    #barchart()
-    #selected_bias=single_pills(diccionario)
-    #st.write(f"Your selected option: {selected_bias}.")
-    #analysis(selected_bias, diccionario)
-    turing_test()
-    st.switch_page("pages/output.py")
-
-example_bias_dict = {
-	"BiasList": [
-		{
-			"BiasId": 1,
-			"BiasType": "Gender",
-			"BiasDegree": "Highly biased",
-			"ConfidencePercentage": 80,
-			"FragmentsPresent": [
-				{
-					"FragmentId": 1,
-					"FragmentContent": "Los hombres manejan mejor que las mujeres",
-					"FragmentBiasDegree": "Highly biased",
-					"Reformulations": [
-						{
-							"ReformulationId": 1,
-							"ReformulationLevel": "Simple",
-							"AlternativeText": "bla bla bla"
-						},
-						{
-							"ReformulationId": 2,
-							"ReformulationLevel": "Medium",
-							"AlternativeText": "lab lab lab"
-						},
-						{
-							"ReformulationId": 3,
-							"ReformulationLevel": "Complex",
-							"AlternativeText": "alb alb alb"
-						}
-                	]
-            	}
-            ],
-			"Explanation": "Gender bias is a bias defined as ..."
-		}
-	],
-	"TuringTest": True/False,
-	"Category": "Politics",
-	"Topic": "Democracy",
-	"Subtopic": "Election Security"
-}
-
+    barchart(example_bias_dict, bias_level, colour_hex, colour_reference)
+    selected_bias=single_pills(example_bias_dict)
+    st.write(f"Your selected option: {selected_bias}.")
+    analysis(selected_bias, example_bias_dict)
+    turing_test(example_bias_dict)
 
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
 st.markdown("#### Was this answer helpful?")
