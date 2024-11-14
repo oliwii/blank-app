@@ -1,5 +1,5 @@
 import streamlit as st
-from references.prompttemplate import format_prompt
+#from references.prompttemplate import format_prompt
 from references.barchart import barchart
 from references.explanation import single_pills
 from references.turingtest import turing_test
