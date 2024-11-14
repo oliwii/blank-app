@@ -1,7 +1,5 @@
 import streamlit as st
 
-st.markdown(st.session_state.textinput)
-
 def single_pills(dictionary):
     bias_options = []
     #Iterar en los elementos de la lista BiasList

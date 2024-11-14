@@ -78,6 +78,7 @@ biases = st.multiselect(
 
 st.write("You selected:", biases)
 
+#Initialize input text in session state
 if "textinput" not in st.session_state:
     st.session_state.textinput = None
 
@@ -109,6 +110,7 @@ colour_hex = [
 ]
 
 if st.button(":material/send: Submit"):
+    #Set original text in session state
     st.session_state.textinput = original_text
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
