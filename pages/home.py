@@ -6,10 +6,12 @@ def show_contact_form():
     contact_form()
 
 # --- HERO SECTION ---
+"""
 st.image(
     "./assets/byebias.png", 
     width=400
     )
+"""
 st.write("\n")
 st.subheader(":violet[Be aware, don't beware]")
 st.write("\n")
