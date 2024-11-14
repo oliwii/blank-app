@@ -1,3 +1,4 @@
+"""
 from langchain_core.prompts import PromptTemplate
 
 prompt_template = PromptTemplate.from_template(
@@ -75,3 +76,4 @@ def format_prompt(texto, lista, escala):
             "intensity_scale": escala
         }
     )
+"""
