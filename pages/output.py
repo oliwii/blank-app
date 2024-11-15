@@ -68,25 +68,21 @@ colour_hex = [
     "#D32F2F"
 ]
 
-col1, col2 = st.columns(2)
+#Show chart
+st.altair_chart(barchart(example_bias_dict, st.session_state.bias_level, colour_hex, colour_reference))
 
-with col1:
-    #Show chart
-    st.altair_chart(barchart(example_bias_dict, st.session_state.bias_level, colour_hex, colour_reference))
+# Write analysis
+selected_bias = single_pills(example_bias_dict)
+st.write(f"Your selected option: {selected_bias}.")
+if selected_bias is not None:
+    analysis(selected_bias, example_bias_dict)
 
-    # Write analysis
-    selected_bias = single_pills(example_bias_dict)
-    st.write(f"Your selected option: {selected_bias}.")
-    if selected_bias is not None:
-        analysis(selected_bias, example_bias_dict)
+# Show Turing test results
+turing_test(example_bias_dict)
 
-    # Show Turing test results
-    turing_test(example_bias_dict)
-
-with col2:
-    with st.container(border=True):
-        st.markdown(st.session_state.textcopy)
-        st.write("Lorem Ipsum"*100)
+with st.container(border=True):
+    st.markdown(st.session_state.textcopy)
+    st.write("Lorem Ipsum"*100)
 
 st.divider()
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
