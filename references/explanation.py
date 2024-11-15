@@ -31,7 +31,7 @@ def analysis(bias, bias_analysis_result):
             st.markdown(f"#### Fragments where {bias} bias was detected:")
             #fragment is a dictionary of the list item["FragmentsPresent"]
             for fragment in item["FragmentsPresent"]:
-                st.markdown(f" {fragment['FragmentContent']}.  **{fragment['FragmentBiasDegree']}**.")
+                st.markdown(f" *{fragment['FragmentContent']}*.  **{fragment['FragmentBiasDegree']}**.")
                 st.markdown("##### Possible reformulations")
                 st.markdown(fragment["Reformulations"][0]["AlternativeText"])
                 st.button(label="Apply Simple")
