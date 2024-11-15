@@ -2,6 +2,7 @@ import streamlit as st
 from references.barchart import barchart
 from references.explanation import single_pills
 from references.explanation import analysis
+from references.explanation import replace_fragment
 from references.turingtest import turing_test
 
 
@@ -84,7 +85,7 @@ with col1:
 
 with col2:
     with st.container(border=True):
-        st.markdown(st.session_state.textcopy)
+        st.markdown(st.session_state.textcopy + "Lorem Ipsum"*100)
 
 st.divider()
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]

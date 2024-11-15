@@ -15,6 +15,15 @@ def single_pills(dictionary):
     return selection
 #    st.markdown(f"Your selected option: {selection}.")
 
+def replace_fragment(text, previous_fragment, new_fragment):
+    # Check if the exact fragment is in the text
+    if previous_fragment in text:
+        # Apply :color-background syntax for highlighting
+        highlighted_new_fragment = f":green-background[{new_fragment}]"
+        # Replace the exact match with the new fragment
+        text = text.replace(previous_fragment,highlighted_new_fragment)
+    return text
+
 def analysis(bias, bias_analysis_result):
     #Write the item (bias) selected
     st.markdown(f"### {bias}")
@@ -33,35 +42,21 @@ def analysis(bias, bias_analysis_result):
             for fragment in item["FragmentsPresent"]:
                 st.markdown(f" *{fragment['FragmentContent']}*.  **{fragment['FragmentBiasDegree']}**.")
                 st.markdown("##### Possible reformulations")
+
                 simple_reformulation = st.markdown(fragment["Reformulations"][0]["AlternativeText"])
                 simple_button = st.button(label="Apply Simple")
                 if simple_button:
                     replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation)
                 # button_dict[f"{fragment["FragmentId"]},1"]=st.button(label="Apply Simple")
+
                 meduim_reformulation = st.markdown(fragment["Reformulations"][1]["AlternativeText"])               
                 medium_button = st.button(label="Apply Medium")
                 if medium_button:
                     replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation)
                 # button_dict[f"{fragment["FragmentId"]},2"]=st.button(label="Apply Medium")
+
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
                 complex_button = st.button(label="Apply Complex")
                 if complex_button:
                     replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation)
                 # button_dict[f"{fragment["FragmentId"]},3"]=st.button(label="Apply Complex")
-
-
-def replace_fragment(text, previous_fragment, new_fragment):
-    # Check if the exact fragment is in the text
-    if previous_fragment in text:
-        # Apply :color-background syntax for highlighting
-        highlighted_new_fragment = f":green-background[{new_fragment}]"
-        # Replace the exact match with the new fragment
-        text = text.replace(previous_fragment,highlighted_new_fragment)
-    return text
-
-
-# Button to apply replacement
-if st.button("Apply Replacement"):
-    updated_text = replace_exact_sentence(text, old_sentence, new_sentence)
-    st.markdown("### Updated Text")
-    st.markdown(updated_text)
