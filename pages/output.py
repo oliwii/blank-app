@@ -76,7 +76,7 @@ if selected_bias is not None:
     analysis(selected_bias, example_bias_dict)
 
 turing_test(example_bias_dict)
-st.divider()
+st.write(":green[---]")
 
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
 st.markdown("##### Was this answer helpful?")
