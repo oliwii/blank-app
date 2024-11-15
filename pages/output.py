@@ -79,7 +79,7 @@ turing_test(example_bias_dict)
 st.divider()
 
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
-st.markdown("#### Was this answer helpful?")
+st.markdown("##### Was this answer helpful?")
 selected = st.feedback("thumbs")
 if selected is not None:
     st.caption(":violet[Thank you for the feedback!]")

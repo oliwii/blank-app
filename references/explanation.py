@@ -17,7 +17,7 @@ def single_pills(dictionary):
 
 def analysis(bias, bias_analysis_result):
     #Write the item (bias) selected
-    st.markdown(f"## {bias}")
+    st.markdown(f"### {bias}")
 
     #Write the description: definition and explanation.
     #dictionary["BiasList"] returns a list with the different biases chosen to analyze.
@@ -28,11 +28,11 @@ def analysis(bias, bias_analysis_result):
     for item in bias_analysis_result["BiasList"]:
         if item["BiasType"] == bias:
             st.markdown(item["Explanation"])
-            st.markdown(f"### Fragments where {bias} bias was detected:")
+            st.markdown(f"#### Fragments where {bias} bias was detected:")
             #fragment is a dictionary of the list item["FragmentsPresent"]
             for fragment in item["FragmentsPresent"]:
                 st.markdown(f" {fragment['FragmentContent']}.  **{fragment['FragmentBiasDegree']}**.")
-                st.markdown("#### Possible reformulations")
+                st.markdown("##### Possible reformulations")
                 st.markdown(fragment["Reformulations"][0]["AlternativeText"])
                 st.button(label="Apply Simple")
 #                button_dict[f"{fragment["FragmentId"]},1"]=st.button(label="Apply Simple")
