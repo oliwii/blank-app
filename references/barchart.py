@@ -37,4 +37,4 @@ def barchart(dictionary, classification, hex_colour, colour_ref):
     )
 
     # Display the chart
-    chart
+    return chart

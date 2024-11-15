@@ -17,7 +17,6 @@ def single_pills(dictionary):
 
 def analysis(bias, bias_analysis_result):
     #Write the item (bias) selected
-    st.write(bias)
     st.markdown(f"# {bias}")
 
     #Write the description: definition and explanation.
@@ -27,7 +26,6 @@ def analysis(bias, bias_analysis_result):
     #button_dict={}
 
     for item in bias_analysis_result["BiasList"]:
-        st.write(item["BiasType"])
         if item["BiasType"] == bias:
             st.markdown(item["Explanation"])
             st.markdown(f"## Fragments where {bias} bias was detected:")
