@@ -22,7 +22,7 @@ bias_level = [
 ]
 
 if "bias_level" not in st.session_state:
-    st.session_state.bias_level=None
+    st.session_state.bias_level = None
 
 bias_list = [
     "Gender",
@@ -33,9 +33,6 @@ bias_list = [
     "Ideology",
     "Religion",
 ]
-
-if "bias_list" not in st.session_state:
-    st.session_state.bias_list=bias_list
 
 biases = st.multiselect(
     "What biases are you worried about?",
@@ -48,13 +45,12 @@ st.write("You selected:", biases)
 if "textinput" not in st.session_state:
     st.session_state.textinput = None
 
+if "textcopy" not in st.session_state:
+    st.session_state.textcopy=None
+
 original_text = st.text_area(
     label="Text to analyze",
-    value="It was the best of times, it was the worst of times, it was the age of "
-    "wisdom, it was the age of foolishness, it was the epoch of belief, it "
-    "was the epoch of incredulity, it was the season of Light, it was the "
-    "season of Darkness, it was the spring of hope, it was the winter of "
-    "despair, (...)",
+    value="Los hombres manejan mejor que las mujeres",
     placeholder="Enter text"
 )
 
@@ -65,9 +61,12 @@ st.write(
 
 
 if st.button(":material/send: Submit"):
-    #Set original text in session state
+    #Set original text and copy in session state
     st.session_state.textinput = original_text
-    st.session_state.bias_level=bias_level
+    st.session_state.textcopy = original_text
+
+    #Set bias classifications in session state
+    st.session_state.bias_level = bias_level
 
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
