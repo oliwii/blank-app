@@ -55,7 +55,7 @@ original_text_area = st.text_area(
 )
 
 st.write(
-    f"You wrote {len(original_text)} characters.",
+    f"You wrote {len(original_text_area)} characters.",
     "\n"
 )
 
