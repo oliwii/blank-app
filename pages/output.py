@@ -67,7 +67,7 @@ colour_hex = [
     "#D32F2F"
 ]
 
-col1,col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
 with col1:
     #Show chart
