@@ -67,7 +67,7 @@ colour_hex = [
     "#D32F2F"
 ]
 
-barchart(example_bias_dict, st.session_state.bias_level, colour_hex, colour_reference)
+st.altair_chart(barchart(example_bias_dict, st.session_state.bias_level, colour_hex, colour_reference))
 
 selected_bias = single_pills(example_bias_dict)
 st.write(f"Your selected option: {selected_bias}.")
