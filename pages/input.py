@@ -22,7 +22,7 @@ bias_level = [
 ]
 
 if "bias_level" not in st.session_state:
-    st.session_state.bias_level=bias_level
+    st.session_state.bias_level=None
 
 bias_list = [
     "Gender",
@@ -67,6 +67,7 @@ st.write(
 if st.button(":material/send: Submit"):
     #Set original text in session state
     st.session_state.textinput = original_text
+    st.session_state.bias_level=bias_level
 
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
