@@ -85,7 +85,8 @@ with col1:
 
 with col2:
     with st.container(border=True):
-        st.markdown(st.session_state.textcopy + "Lorem Ipsum"*100)
+        st.markdown(st.session_state.textcopy)
+        st.write("Lorem Ipsum"*100)
 
 st.divider()
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
