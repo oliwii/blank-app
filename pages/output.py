@@ -1,9 +1,86 @@
 import streamlit as st
+from references.barchart import barchart
+from references.explanation import single_pills
+from references.explanation import analysis
+from references.turingtest import turing_test
+
+
+example_bias_dict = {
+	"BiasList": [
+		{
+			"BiasId": 1,
+			"BiasType": "Gender",
+			"BiasDegree": "Highly biased",
+			"ConfidencePercentage": 80,
+			"FragmentsPresent": [
+				{
+					"FragmentId": 1,
+					"FragmentContent": "Los hombres manejan mejor que las mujeres",
+					"FragmentBiasDegree": "Highly biased",
+					"Reformulations": [
+						{
+							"ReformulationId": 1,
+							"ReformulationLevel": "Simple",
+							"AlternativeText": "bla bla bla"
+						},
+						{
+							"ReformulationId": 2,
+							"ReformulationLevel": "Medium",
+							"AlternativeText": "lab lab lab"
+						},
+						{
+							"ReformulationId": 3,
+							"ReformulationLevel": "Complex",
+							"AlternativeText": "alb alb alb"
+						}
+                	]
+            	}
+            ],
+			"Explanation": "Gender bias is a bias defined as ..."
+		}
+	],
+	"TuringTest": True,
+	"Category": "Politics",
+	"Topic": "Democracy",
+	"Subtopic": "Election Security"
+}
+
+###########
+
 
 st.title("Results")
 
+
+colour_reference = {
+     "Bias free": 0,
+     "Weakly biased": 1,
+     "Moderately biased": 2,
+     "Highly biased": 3,
+     "Extremely biased": 4
+}
+
+colour_hex = [
+    "#6ABD45",
+    "#FFC107",
+    "#FF9800",
+    "#F44336",
+    "#D32F2F"
+]
+
+barchart(example_bias_dict, st.session_state.bias_level, colour_hex, colour_reference)
+
+selected_bias = single_pills(example_bias_dict)
+st.write(f"Your selected option: {selected_bias}.")
+
+if selected_bias is not None:
+    st.write(selected_bias)
+    analysis(selected_bias, example_bias_dict)
+
+turing_test(example_bias_dict)
+st.divider()
+
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
-st.write("Was this answer helpful?")
+st.markdown("#### Was this answer helpful?")
 selected = st.feedback("thumbs")
 if selected is not None:
     st.caption(":violet[Thank you for the feedback!]")

@@ -9,49 +9,9 @@ from references.turingtest import turing_test
 #from langchain_openai.chat_models import ChatOpenAI
 #from langchain.chat_models import ChatOpenAI
 
-example_bias_dict = {
-	"BiasList": [
-		{
-			"BiasId": 1,
-			"BiasType": "Gender",
-			"BiasDegree": "Highly biased",
-			"ConfidencePercentage": 80,
-			"FragmentsPresent": [
-				{
-					"FragmentId": 1,
-					"FragmentContent": "Los hombres manejan mejor que las mujeres",
-					"FragmentBiasDegree": "Highly biased",
-					"Reformulations": [
-						{
-							"ReformulationId": 1,
-							"ReformulationLevel": "Simple",
-							"AlternativeText": "bla bla bla"
-						},
-						{
-							"ReformulationId": 2,
-							"ReformulationLevel": "Medium",
-							"AlternativeText": "lab lab lab"
-						},
-						{
-							"ReformulationId": 3,
-							"ReformulationLevel": "Complex",
-							"AlternativeText": "alb alb alb"
-						}
-                	]
-            	}
-            ],
-			"Explanation": "Gender bias is a bias defined as ..."
-		}
-	],
-	"TuringTest": True,
-	"Category": "Politics",
-	"Topic": "Democracy",
-	"Subtopic": "Election Security"
-}
-
-###########
 
 st.title("Insert content")
+
 
 bias_level = [
     "Bias free",
@@ -60,6 +20,9 @@ bias_level = [
     "Highly biased",
     "Extremely biased"
 ]
+
+if "bias_level" not in st.session_state:
+    st.session_state.bias_level=bias_level
 
 bias_list = [
     "Gender",
@@ -70,6 +33,9 @@ bias_list = [
     "Ideology",
     "Religion",
 ]
+
+if "bias_list" not in st.session_state:
+    st.session_state.bias_list=bias_list
 
 biases = st.multiselect(
     "What biases are you worried about?",
@@ -97,21 +63,6 @@ st.write(
     "\n"
 )
 
-colour_reference = {
-     "Bias free": 0,
-     "Weakly biased": 1,
-     "Moderately biased": 2,
-     "Highly biased": 3,
-     "Extremely biased": 4
-}
-
-colour_hex = [
-    "#6ABD45",
-    "#FFC107",
-    "#FF9800",
-    "#F44336",
-    "#D32F2F"
-]
 
 if st.button(":material/send: Submit"):
     #Set original text in session state
@@ -120,17 +71,9 @@ if st.button(":material/send: Submit"):
     #format_prompt(original_text, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
 
-    barchart(example_bias_dict, bias_level, colour_hex, colour_reference)
-    selected_bias = single_pills(example_bias_dict)
-    st.write(f"Your selected option: {selected_bias}.")
-    if selected_bias is not None:
-        st.write(selected_bias)
-        #analysis(selected_bias, example_bias_dict)
-    turing_test(example_bias_dict)
-    sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
-    st.markdown("#### Was this answer helpful?")
-    selected = st.feedback("thumbs")
-    if selected is not None:
-        st.caption(":violet[Thank you for the feedback!]")
-        if selected == 1:
-            st.balloons()
+    st.write("See results in Output page")
+    st.page_link(
+        page="pages/output.py",
+        label=":rainbow[Go to Output]",
+        icon="🧩" #":material/arrow_forward:"
+    )
