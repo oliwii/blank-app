@@ -31,7 +31,7 @@ example_bias_dict = {
 						{
 							"ReformulationId": 3,
 							"ReformulationLevel": "Complex",
-							"AlternativeText": "alb alb alb"
+							"AlternativeText": "abl abl abl"
 						}
                 	]
             	}
