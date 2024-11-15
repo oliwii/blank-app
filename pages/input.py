@@ -5,7 +5,7 @@ from references.explanation import single_pills
 from references.explanation import analysis
 from references.turingtest import turing_test
 #from langchain.llms import OpenAI
-#from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 #from langchain_openai.chat_models import ChatOpenAI
 #from langchain.chat_models import ChatOpenAI
 
@@ -48,7 +48,7 @@ if "textinput" not in st.session_state:
 if "textcopy" not in st.session_state:
     st.session_state.textcopy=None
 
-original_text = st.text_area(
+original_text_area = st.text_area(
     label="Text to analyze",
     value="Los hombres manejan mejor que las mujeres",
     placeholder="Enter text"
@@ -59,11 +59,14 @@ st.write(
     "\n"
 )
 
+st.markdown("Alternatively, upload a text file")
+st.file_uploader("Browse .txt a file")
+
 
 if st.button(":material/send: Submit"):
     #Set original text and copy in session state
-    st.session_state.textinput = original_text
-    st.session_state.textcopy = original_text
+    st.session_state.textinput = original_text_area
+    st.session_state.textcopy = original_text_area
 
     #Set bias classifications in session state
     st.session_state.bias_level = bias_level
