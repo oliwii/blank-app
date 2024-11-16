@@ -1,13 +1,12 @@
 import streamlit as st
-#from references.prompttemplate import format_prompt
+from references.prompttemplate import template
 from references.barchart import barchart
 from references.explanation import single_pills
 from references.explanation import analysis
 from references.turingtest import turing_test
 #from langchain.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
-#from langchain_openai.chat_models import ChatOpenAI
-#from langchain.chat_models import ChatOpenAI
+from langchain_openai.chat_models import ChatOpenAI
 
 
 st.title("Insert content")
@@ -59,8 +58,8 @@ st.write(
     "\n"
 )
 
-st.markdown("Alternatively, upload a text file")
-st.file_uploader("Browse .txt a file")
+#st.markdown("Alternatively, upload a text file")
+#st.file_uploader("Browse .txt a file")
 
 
 if st.button(":material/send: Submit"):
@@ -71,9 +70,17 @@ if st.button(":material/send: Submit"):
     #Set bias classifications in session state
     st.session_state.bias_level = bias_level
 
-    PromptTemplate.format_prompt({"article":original_text_area, 
-                                 "intensity_scale": biases, 
-                                 "include_biases": bias_level})
+    prompt_value = template.invoke(
+        {
+            "intensity_scale": bias_level,
+            "include_biases": biases,
+            "article": original_text_area
+        }
+    )
+    if st.session_state.openai_api_key is not None:
+        model = ChatOpenAI(model="gpt-4o-mini", temperature=0.0, api_key=st.session_state.openai_api_key)
+        result = model.invoke(prompt_value)
+        st.write(result)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
 
     st.write("See results in Output page")
