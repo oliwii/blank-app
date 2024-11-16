@@ -1,9 +1,5 @@
 import streamlit as st
 from references.prompttemplate import template
-from references.barchart import barchart
-from references.explanation import single_pills
-from references.explanation import analysis
-from references.turingtest import turing_test
 #from langchain.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_openai.chat_models import ChatOpenAI
@@ -69,9 +65,12 @@ if st.button(":material/send: Submit"):
 
     #Set bias classifications in session state
     st.session_state.bias_level = bias_level
+
+    # Turn list arguments into string
     intensity = ", ".join(bias_level)
     include = ", ".join(biases)
 
+    
     prompt_value = template.invoke(
         {
             "intensity_scale": intensity,
@@ -79,15 +78,21 @@ if st.button(":material/send: Submit"):
             "article": original_text_area
         }
     )
+    
     if st.session_state.openai_api_key is not None:
         model = ChatOpenAI(model="gpt-4o-mini", temperature=0.0, api_key=st.session_state.openai_api_key)
         result = model.invoke(prompt_value)
         st.write(result)
-    #llamar a openai funcion(prompt_template.invoke({"article": txt}))
+    else:
+        st.markdown("Please insert API key in Settings")
+        st.page_link(
+            page="pages/settings.py",
+            label="Go to Settings :material/arrow_forward:"
+        )
 
     st.write("See results in Output page")
     st.page_link(
         page="pages/output.py",
         label=":rainbow[Go to Output]",
-        icon="🧩" #":material/arrow_forward:"
+        icon="🧩" 
     )
