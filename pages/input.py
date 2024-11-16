@@ -71,7 +71,7 @@ if st.button(":material/send: Submit"):
     #Set bias classifications in session state
     st.session_state.bias_level = bias_level
 
-    #format_prompt(original_text, biases, bias_level)
+    PromptTemplate.format_prompt(original_text_area, biases, bias_level)
     #llamar a openai funcion(prompt_template.invoke({"article": txt}))
 
     st.write("See results in Output page")

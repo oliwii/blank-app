@@ -47,16 +47,19 @@ def analysis(bias, bias_analysis_result):
                 simple_button = st.button(label="Apply Simple")
                 if simple_button:
                     replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation)
+                    st.markdown(st.session_state.textcopy)
                 # button_dict[f"{fragment["FragmentId"]},1"]=st.button(label="Apply Simple")
 
                 meduim_reformulation = st.markdown(fragment["Reformulations"][1]["AlternativeText"])               
                 medium_button = st.button(label="Apply Medium")
                 if medium_button:
                     replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation)
+                    st.markdown(st.session_state.textcopy)
                 # button_dict[f"{fragment["FragmentId"]},2"]=st.button(label="Apply Medium")
 
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
                 complex_button = st.button(label="Apply Complex")
                 if complex_button:
                     replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation)
+                    st.markdown(st.session_state.textcopy)
                 # button_dict[f"{fragment["FragmentId"]},3"]=st.button(label="Apply Complex")
