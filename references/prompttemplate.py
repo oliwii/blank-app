@@ -67,11 +67,6 @@ template = ChatPromptTemplate([
  )
 ])
 
-prompt_value = template.invoke(
-    {
-        
-	}
-)
 ##########################################################################################
 
 prompt = PromptTemplate.from_template(
