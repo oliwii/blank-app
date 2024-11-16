@@ -69,11 +69,13 @@ if st.button(":material/send: Submit"):
 
     #Set bias classifications in session state
     st.session_state.bias_level = bias_level
+    intensity = ", ".join(bias_level)
+    include = ", ".join(biases)
 
     prompt_value = template.invoke(
         {
-            "intensity_scale": bias_level,
-            "include_biases": biases,
+            "intensity_scale": intensity,
+            "include_biases": include,
             "article": original_text_area
         }
     )
