@@ -74,7 +74,7 @@ if st.button(":material/send: Submit"):
     include = ", ".join(biases)
 
 
-    prompt_value = template.format({"intensity_scale": intensity, "include_biases": include, "article": original_text_area})
+    prompt_value = template.format(intensity_scale=intensity, include_biases=include, article=original_text_area)
     
     if st.session_state.openai_api_key is not None:
         llm = ChatOpenAI(
