@@ -1,6 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 
-template = ChatPromptTemplate([
+template = ChatPromptTemplate.from_messages([
     ("system", 
     '''You will recieve a news article. Read it and perform the task that follows. Respond with a JSON object of key-value pairs.
 

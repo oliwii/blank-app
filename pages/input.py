@@ -2,7 +2,8 @@ import streamlit as st
 from references.prompttemplate import template
 #from langchain.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
-from langchain_openai.chat_models import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
 
 
 st.title("Insert content")
@@ -70,18 +71,19 @@ if st.button(":material/send: Submit"):
     intensity = ", ".join(bias_level)
     include = ", ".join(biases)
 
-    
-    prompt_value = template.invoke(
-        {
-            "intensity_scale": intensity,
-            "include_biases": include,
-            "article": original_text_area
-        }
-    )
+
+    prompt_value = template.format({"intensity_scale": intensity, "include_biases": include, "article": original_text_area})
     
     if st.session_state.openai_api_key is not None:
-        model = ChatOpenAI(model="gpt-4o-mini", temperature=0.0, api_key=st.session_state.openai_api_key)
-        result = model.invoke(prompt_value)
+        llm = ChatOpenAI(
+            model="gpt-4o-mini",
+            temperature=0,
+            max_tokens=None,
+            timeout=50,
+            max_retries=2,
+            api_key=st.session_state.openai_api_key
+            )
+        result = llm.invoke(prompt_value)
         st.write(result)
     else:
         st.markdown("Please insert API key in Settings")
