@@ -48,7 +48,7 @@ original_text_area = st.text_area(
     label="Text to analyze",
     value="Los hombres manejan mejor que las mujeres",
     max_chars=5000,
-    help="Please consider the quantity of characters is limited."
+    help="Please consider the quantity of characters is limited.",
     placeholder="Enter text"
 )
 
