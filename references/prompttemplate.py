@@ -13,7 +13,7 @@ In the values for FragmentContent, there should be a text fragment from the arti
 Reformulations shoud be in the same language as the original fragment.
 
 Leave the category, topic, and subtopic keys blank.
-For the Turing test, respond True if you believe the article was written by a human, False otherwise.
+For the Turing test, respond true if you believe the article was written by a human, false otherwise.
 
 The JSON you should return is as follows:
 

@@ -92,3 +92,10 @@ if selected is not None:
     st.caption(":violet[Thank you for the feedback!]")
     if selected == 1:
         st.balloons()
+        
+holidays = st.button(
+    label="Happy holidays!",
+    icon="❄️"
+)
+if holidays:
+    st.snow()

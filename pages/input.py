@@ -27,7 +27,7 @@ bias_list = [
     "Body type",
     "Sexuality",
     "Ideology",
-    "Religion",
+    "Religion"
 ]
 
 biases = st.multiselect(
@@ -47,6 +47,8 @@ if "textcopy" not in st.session_state:
 original_text_area = st.text_area(
     label="Text to analyze",
     value="Los hombres manejan mejor que las mujeres",
+    max_chars=5000,
+    help="Please consider the quantity of characters is limited."
     placeholder="Enter text"
 )
 
