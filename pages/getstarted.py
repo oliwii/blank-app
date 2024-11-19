@@ -7,6 +7,11 @@ right.page_link(page="pages/register.py", label="Register")
 st.markdown("# Plans")
 col1, col2, col3, col4 = st.columns(4)
 
+st.markdown("""
+Primera línea<br>
+Segunda línea<br>
+Tercera línea
+""", unsafe_allow_html=True)
 
 with col1:
     container = st.container(border=True)
@@ -14,11 +19,11 @@ with col1:
     container.markdown("### $0 p/month")
     container.markdown("Ideal for users who want an introduction to :violet[Bye Bias]")
     container.markdown("""
-                    :green[- Basic analysis]
-                    :green[- Dashboard]
-                    :green[- Limited words]
-                    :green[- Simple-level reformulation]
-                    :red[- No image analysis]
+                    - Basic analysis
+                    - Dashboard
+                    - Limited words
+                    - Simple-level reformulation
+                    - No image analysis
                        """)
     #container.markdown(":material/check_small: Basic analysis"+"\n"+":material/check_small: Dashboard"+"\n"+":material/check_small: Limited words"+"\n"+":material/check_small: Simple-level reformulation"+"\n"+":material/close_small: No image analysis")
     container.button(
@@ -57,8 +62,8 @@ with col3:
                     - Advanced insights
                     - 100 queries a month
                     - Two reformulation levels: simple and complex
-                    - Up to 5 users
                     - No image analysis
+                    - Up to 5 users
                        """)
     #container.markdown(":material/check_small: Complete analysis"+"\n"+":material/check_small: Advanced insights"+"\n"+":material/check_small: 100 queries a month"+"\n"+":material/check_small: Two reformulation levels: simple and complex"+"\n"+":material/check_small: Up to 5 users"+"\n"+":material/close_small: No image analysis")
     container.button(
