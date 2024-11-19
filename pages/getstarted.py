@@ -10,11 +10,22 @@ col1, col2, col3, col4 = st.columns(4)
 #"✓"
 #"✗"
 
+st.markdown("# Hello 1")
+st.markdown("## Hello 2")
+st.markdown("### Hello 3")
+st.markdown("#### Hello 4")
+st.markdown("##### Hello 5")
+st.markdown("###### Hello 6")
+st.markdown("####### Hello 7")
+st.markdown("######## Hello 8")
+st.markdown("######### Hello 9")
+
+
 with col1:
     container = st.container(border=True)
     container.markdown("Free")
     container.markdown("## $0")
-    container.markdown("##### p/month")
+    container.markdown("###### p/month")
     container.markdown("Ideal for users who want an introduction to :violet[Bye Bias]")
     texto1 = """
     <p>✓ Basic bias analysis</p>
@@ -34,7 +45,7 @@ with col2:
     container = st.container(border=True)
     container.markdown("Pro")
     container.markdown("## $10") 
-    container.markdown("##### p/month")
+    container.markdown("###### p/month")
     container.caption("*:blue-background[Best deal :material/bolt:]*")
     container.markdown("Free features +")
     texto2 = """
@@ -56,7 +67,7 @@ with col3:
     container = st.container(border=True)
     container.markdown("Basic")
     container.markdown("## $25")
-    container.markdown("##### p/month")
+    container.markdown("###### p/month")
     container.markdown("For small businesses seeking an introduction to bias analysis in their communication.")
     texto3="""
     <p>✓ Complete bias analysis</p>
@@ -77,7 +88,7 @@ with col4:
     container = st.container(border=True)
     container.markdown("Business")
     container.markdown("## $100")
-    container.markdown("##### p/month")
+    container.markdown("###### p/month")
     container.caption("*:violet-background[Recommended :material/bolt:]*")
     container.markdown("Basic plan fratures +")
     texto4="""
