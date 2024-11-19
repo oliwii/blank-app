@@ -22,7 +22,7 @@ with col1:
     <p>✓ Simple-level reformulation</p>
     <p>✗ No image analysis</p>
     """
-    container.markdown(texto)
+    container.markdown(texto, unsafe_allow_html=True)
     #container.markdown("""
     #                - Basic analysis
     #                - Dashboard
