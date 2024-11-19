@@ -8,6 +8,14 @@ st.markdown("# Plans")
 col1, col2 = st.columns(2)
 col3, col4 = st.columns(2)
 
+st.markdown(
+    ":material/check_small: Basic analysis\n"
+    ":material/check_small: Dashboard\n" 
+    ":material/check_small: Limited words\n"
+    ":material/check_small: Simple-level reformulation\n"
+    ":material/close_small: No image analysis"
+)
+
 with col1:
     container = st.container(border=True)
     container.markdown("Free")
