@@ -16,9 +16,11 @@ st.markdown("### Hello 3")
 st.markdown("#### Hello 4")
 st.markdown("##### Hello 5")
 st.markdown("###### Hello 6")
-st.markdown("####### Hello 7")
-st.markdown("######## Hello 8")
-st.markdown("######### Hello 9")
+st.write("Hello write")
+st.text("Hello text")
+#st.markdown("####### Hello 7")
+#st.markdown("######## Hello 8")
+#st.markdown("######### Hello 9")
 
 
 with col1:
