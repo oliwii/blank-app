@@ -5,7 +5,8 @@ left.page_link(page="pages/signin.py", label="Sign In")
 right.page_link(page="pages/register.py", label="Register")
 
 st.markdown("# Plans")
-col1, col2, col3, col4 = st.columns(4)
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
 
 with col1:
     container = st.container(border=True)
