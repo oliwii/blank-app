@@ -32,7 +32,7 @@ with col1:
                        :material/check_small: Simple-level reformulation<br>
                        :material/close_small: No image analysis<br>
                        """,
-                       usafe_allow_html=True)
+                       unsafe_allow_html=True)
     container.button(
         label="Start for free",
         icon="🌱"
