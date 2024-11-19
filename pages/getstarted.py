@@ -4,12 +4,12 @@ left, right = st.columns(2)
 left.page_link(page="pages/signin.py", label="Sign In")
 right.page_link(page="pages/register.py", label="Register")
 
-st.markdown("# **Plans**")
+st.markdown("# Plans")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     container = st.container(border=True)
-    container.markdown("*Free*")
+    container.markdown("Free")
     container.markdown("### $0 p/month")
     container.markdown("Ideal for users who want an introduction to :violet[Bye Bias].")
     container.markdown(":material/check-small: Basic analysis\n"
@@ -27,9 +27,17 @@ with col2:
     container = st.container(border=True)
     container.markdown("Pro")
     container.markdown("### $10 p/month")
-    container.caption(":blue[Best deal] :material/bolt:")
+    container.caption("*:blue[Best deal :material/bolt:]*")
     container.markdown("Free features +")
-    container.markdown(":material/check_small: Complete analysis"+"\n"+":material/check_small: Advanced insights"+"\n"+":material/check_small: Illimited words"+"\n"+":material/check_small: Three reformulation levels"+"\n"+":material/check_small: Image analysis"+"\n"+":material/check_small: AI text detection")
+    container.markdown("""
+                    - Complete analysis
+                    - Advanced insights
+                    - Illimited words
+                    - Three reformulation levels
+                    - Image analysis
+                    - AI text detection
+                       """)
+    #container.markdown(":material/check_small: Complete analysis"+"\n"+":material/check_small: Advanced insights"+"\n"+":material/check_small: Illimited words"+"\n"+":material/check_small: Three reformulation levels"+"\n"+":material/check_small: Image analysis"+"\n"+":material/check_small: AI text detection")
     container.button(
         label="Get Pro",
         icon=":material/arrow_forward:",
@@ -52,7 +60,7 @@ with col4:
     container = st.container(border=True)
     container.markdown("Business")
     container.markdown("### $100 p/month")
-    container.caption(":gray[Recommended] :material/bolt:")
+    container.caption("*:gray[Recommended :material/bolt:]*")
     container.markdown("Basic plan fratures +")
     container.markdown("""
                        :material/check_small: Advanced insights
