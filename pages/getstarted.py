@@ -49,7 +49,7 @@ with col4:
     container.markdown("$100 p/month")
     container.caption(":gray[Recommended] :material/bolt:")
     container.markdown("Basic plan fratures +")
-    container.markdown(":material/check_small: Advanced insights"+"\n"+":material/check_small: Illimited words"+"\n"+":material/check_small: Three reformulation levels"+"\n"+":material/check_small: Image analysis"+"\n"+":material/check_small: AI text detection")
+    container.markdown(":material/check_small: Advanced insights\n:material/check_small: Illimited words\n:material/check_small: Three reformulation levels\n:material/check_small: Image analysis\n:material/check_small: AI text detection")
     container.button(
         label="Get Business",
         icon=":material/arrow_forward:",
