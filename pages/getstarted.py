@@ -9,11 +9,6 @@ col1, col2, col3, col4 = st.columns(4)
 
 #"✓"
 #"✗"
-st.markdown("""
-Primera línea<br>
-Segunda línea<br>
-Tercera línea
-""", unsafe_allow_html=True)
 
 with col1:
     container = st.container(border=True)
