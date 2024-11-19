@@ -15,12 +15,12 @@ with col1:
     container.markdown("Free")
     container.markdown("### $0 p/month")
     container.markdown("Ideal for users who want an introduction to :violet[Bye Bias]")
-    texto="""
-    ✓ Basic analysis
-    ✓ Dashboard
-    ✓ Limited words
-    ✓ Simple-level reformulation
-    ✗ No image analysis
+    texto = """
+    <p>✓ Basic analysis</p>
+    <p>✓ Dashboard</p>
+    <p>✓ Limited words</p>
+    <p>✓ Simple-level reformulation</p>
+    <p>✗ No image analysis</p>
     """
     container.markdown(texto)
     #container.markdown("""
