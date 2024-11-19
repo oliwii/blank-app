@@ -4,17 +4,19 @@ left, right = st.columns(2)
 left.page_link(page="pages/signin.py", label="Sign In")
 right.page_link(page="pages/register.py", label="Register")
 
-st.markdown("# Plans")
-col1, col2 = st.columns(2)
-col3, col4 = st.columns(2)
-
-st.markdown(
+st.write(
     ":material/check_small: Basic analysis\n"
     ":material/check_small: Dashboard\n" 
     ":material/check_small: Limited words\n"
     ":material/check_small: Simple-level reformulation\n"
     ":material/close_small: No image analysis"
 )
+
+st.markdown("# Plans")
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
+
+
 
 with col1:
     container = st.container(border=True)
