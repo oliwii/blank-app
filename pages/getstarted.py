@@ -4,7 +4,7 @@ left, right = st.columns(2)
 left.page_link(page="pages/signin.py", label="Sign In")
 right.page_link(page="pages/register.py", label="Register")
 
-st.subheader("**Plans**")
+st.markdown("# **Plans**")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
@@ -46,10 +46,16 @@ with col3:
 with col4:
     container = st.container(border=True)
     container.markdown("Business")
-    container.markdown("$100 p/month")
+    container.markdown("## $100 p/month")
     container.caption(":gray[Recommended] :material/bolt:")
     container.markdown("Basic plan fratures +")
-    container.markdown(":material/check_small: Advanced insights\n:material/check_small: Illimited words\n:material/check_small: Three reformulation levels\n:material/check_small: Image analysis\n:material/check_small: AI text detection")
+    container.markdown("""
+                       :material/check_small: Advanced insights
+                       :material/check_small: Illimited words
+                       :material/check_small: Three reformulation levels
+                       :material/check_small: Image analysis
+                       :material/check_small: AI text detection
+    """)
     container.button(
         label="Get Business",
         icon=":material/arrow_forward:",
