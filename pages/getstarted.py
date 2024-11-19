@@ -25,7 +25,14 @@ with col1:
                     - Simple-level reformulation
                     - No image analysis
                        """)
-    #container.markdown(":material/check_small: Basic analysis"+"\n"+":material/check_small: Dashboard"+"\n"+":material/check_small: Limited words"+"\n"+":material/check_small: Simple-level reformulation"+"\n"+":material/close_small: No image analysis")
+    container.markdown("""
+                       :material/check_small: Basic analysis<br>
+                       :material/check_small: Dashboard<br>
+                       :material/check_small: Limited words<br>
+                       :material/check_small: Simple-level reformulation<br>
+                       :material/close_small: No image analysis<br>
+                       """,
+                       usafe_allow_html=True)
     container.button(
         label="Start for free",
         icon="🌱"
