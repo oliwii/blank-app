@@ -15,14 +15,14 @@ with col1:
     container.markdown("Free")
     container.markdown("### $0 p/month")
     container.markdown("Ideal for users who want an introduction to :violet[Bye Bias]")
-    texto = """
-    <p>✓ Basic analysis</p>
+    texto1 = """
+    <p>✓ Basic bias analysis</p>
     <p>✓ Dashboard</p>
     <p>✓ Limited words</p>
     <p>✓ Simple-level reformulation</p>
     <p>✗ No image analysis</p>
     """
-    container.markdown(texto, unsafe_allow_html=True)
+    container.markdown(texto1, unsafe_allow_html=True)
     #container.markdown("""
     #                - Basic analysis
     #                - Dashboard
@@ -47,16 +47,25 @@ with col2:
     container = st.container(border=True)
     container.markdown("Pro")
     container.markdown("### $10 p/month")
-    container.caption("*:blue[Best deal :material/bolt:]*")
+    container.caption("*:blue-background[Best deal :material/bolt:]*")
     container.markdown("Free features +")
-    container.markdown("""
-                    - Complete analysis
-                    - Advanced insights
-                    - Illimited words
-                    - Three reformulation levels
-                    - Image analysis
-                    - AI text detection
-                       """)
+    texto2 = """
+    <p>✓ Complete bias analysis</p>
+    <p>✓ Advanced insights</p>
+    <p>✓ Illimited words</p>
+    <p>✓ Three reformulation levels</p>
+    <p>✓ Image analysis</p>
+    <p>✓ AI text detection</p>
+    """
+    container.markdown(texto2, unsafe_allow_html=True)
+    #container.markdown("""
+    #                - Complete analysis
+    #                - Advanced insights
+    #                - Illimited words
+    #                - Three reformulation levels
+    #                - Image analysis
+    #                - AI text detection
+    #                   """)
     #container.markdown(":material/check_small: Complete analysis"+"\n"+":material/check_small: Advanced insights"+"\n"+":material/check_small: Illimited words"+"\n"+":material/check_small: Three reformulation levels"+"\n"+":material/check_small: Image analysis"+"\n"+":material/check_small: AI text detection")
     container.button(
         label="Get Pro",
@@ -69,14 +78,23 @@ with col3:
     container.markdown("Basic")
     container.markdown("### $25 p/month")
     container.markdown("For small businesses seeking an introduction to bias analysis in their communication.")
-    container.markdown("""
-                    - Complete analysis
-                    - Advanced insights
-                    - 100 queries a month
-                    - Two reformulation levels: simple and complex
-                    - No image analysis
-                    - Up to 5 users
-                       """)
+    texto3="""
+    <p>✓ Complete bias analysis</p>
+    <p>✓ Dashboard</p>
+    <p>✓ 100 queries a month</p>
+    <p>✓ Two reformulation levels: simple and complex</p>
+    <p>✓ Up to 5 users</p>
+    <p>✗ No image analysis</p>
+    """
+    container.markdown(texto3, unsafe_allow_html=True)
+    #container.markdown("""
+    #                - Complete analysis
+    #                - Advanced insights
+    #                - 100 queries a month
+    #                - Two reformulation levels: simple and complex
+    #                - No image analysis
+    #                - Up to 5 users
+    #                   """)
     #container.markdown(":material/check_small: Complete analysis"+"\n"+":material/check_small: Advanced insights"+"\n"+":material/check_small: 100 queries a month"+"\n"+":material/check_small: Two reformulation levels: simple and complex"+"\n"+":material/check_small: Up to 5 users"+"\n"+":material/close_small: No image analysis")
     container.button(
         label="Get Basic",
@@ -88,15 +106,23 @@ with col4:
     container = st.container(border=True)
     container.markdown("Business")
     container.markdown("### $100 p/month")
-    container.caption("*:gray[Recommended :material/bolt:]*")
+    container.caption("*:violet-background[Recommended :material/bolt:]*")
     container.markdown("Basic plan fratures +")
-    container.markdown("""
-                    - Advanced insights
-                    - Illimited use
-                    - Three reformulation levels
-                    - Image analysis
-                    - AI text detection
-                       """)
+    texto4="""
+    <p>✓ Advanced insights</p>
+    <p>✓ Illimited use</p>
+    <p>✓ Three reformulation levels</p>
+    <p>✓ Image analysis</p>
+    <p>✓ AI text detection</p>
+    """
+    container.markdown(texto4, unsafe_allow_html=True)
+    #container.markdown("""
+    #                - Advanced insights
+    #                - Illimited use
+    #                - Three reformulation levels
+    #                - Image analysis
+    #                - AI text detection
+    #                   """)
     #container.markdown(":material/check_small: Advanced insights :material/check_small: Illimited words :material/check_small: Three reformulation levels :material/check_small: Image analysis :material/check_small: AI text detection")
     container.button(
         label="Get Business",
