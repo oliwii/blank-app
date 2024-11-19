@@ -12,12 +12,14 @@ with col1:
     container = st.container(border=True)
     container.markdown("Free")
     container.markdown("### $0 p/month")
-    container.markdown("Ideal for users who want an introduction to :violet[Bye Bias].")
-    container.markdown(":material/check-small: Basic analysis\n"
-                       ":material/check-small: Dashboard\n"
-                       ":material/check-small: Limited words\n"
-                       ":material/check-small: Simple-level reformulation\n"
-                       ":material/close-small: No image analysis")
+    container.markdown("Ideal for users who want an introduction to :violet[Bye Bias]")
+    container.markdown(
+    ":material/check_small: Basic analysis\n"
+    ":material/check_small: Dashboard\n" 
+    ":material/check_small: Limited words\n"
+    ":material/check_small: Simple-level reformulation\n"
+    ":material/close_small: No image analysis"
+)
     #container.markdown(":material/check_small: Basic analysis"+"\n"+":material/check_small: Dashboard"+"\n"+":material/check_small: Limited words"+"\n"+":material/check_small: Simple-level reformulation"+"\n"+":material/close_small: No image analysis")
     container.button(
         label="Start for free",
