@@ -7,6 +7,8 @@ right.page_link(page="pages/register.py", label="Register")
 st.markdown("# Plans")
 col1, col2, col3, col4 = st.columns(4)
 
+#"✓"
+#"✗"
 st.markdown("""
 Primera línea<br>
 Segunda línea<br>
@@ -18,21 +20,29 @@ with col1:
     container.markdown("Free")
     container.markdown("### $0 p/month")
     container.markdown("Ideal for users who want an introduction to :violet[Bye Bias]")
-    container.markdown("""
-                    - Basic analysis
-                    - Dashboard
-                    - Limited words
-                    - Simple-level reformulation
-                    - No image analysis
-                       """)
-    container.markdown("""
-                       :material/check_small: Basic analysis<br>
-                       :material/check_small: Dashboard<br>
-                       :material/check_small: Limited words<br>
-                       :material/check_small: Simple-level reformulation<br>
-                       :material/close_small: No image analysis<br>
-                       """,
-                       unsafe_allow_html=True)
+    texto="""
+    ✓ Basic analysis
+    ✓ Dashboard
+    ✓ Limited words
+    ✓ Simple-level reformulation
+    ✗ No image analysis
+    """
+    container.markdown(texto)
+    #container.markdown("""
+    #                - Basic analysis
+    #                - Dashboard
+    #                - Limited words
+    #                - Simple-level reformulation
+    #                - No image analysis
+    #                   """)
+    #container.markdown("""
+    #                   :material/check_small: Basic analysis<br>
+    #                   :material/check_small: Dashboard<br>
+    #                   :material/check_small: Limited words<br>
+    #                   :material/check_small: Simple-level reformulation<br>
+    #                   :material/close_small: No image analysis<br>
+    #                   """,
+    #                   unsafe_allow_html=True)
     container.button(
         label="Start for free",
         icon="🌱"
