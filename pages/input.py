@@ -56,14 +56,9 @@ original_text_area = st.text_area(
     placeholder="Enter text"
 )
 
-def max(n1,n2):
-    if n1 <= n2:
-        return n2
-    else:
-        return n1
-
+length_text_area = len(original_text_area) if original_text_area else 0
 st.write(
-    f"You wrote {max(0,{len(original_text_area)})} characters.",
+    f"You wrote {length_text_area} characters.",
     "\n"
 )
 
