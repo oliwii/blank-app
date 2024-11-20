@@ -10,7 +10,7 @@ Your task is to classify each bias according to its intensity on a scale of {int
 The possible biases are: {include_biases}. Do not include any biases that are not on this list. Include all biases on this list.
 
 In the values for FragmentContent, there should be a text fragment from the article where you have identified the corresponding bias. The reformulations should be based specifically on that fragment, separated into three levels: from least to most modified relative to the original fragment.
-Reformulations shoud be in the same language as the original fragment.
+Reformulations are different versions of the original fragment that correct the bias but still conserve the writer's main intention and message. Reformulations shoud be in the same language as the original fragment.
 
 Leave the category, topic, and subtopic keys blank.
 For the Turing test, respond true if you believe the article was written by a human, false otherwise.
