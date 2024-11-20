@@ -1,5 +1,4 @@
 import streamlit as st
-from references.max import max
 from references.prompttemplate import template
 #from langchain.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
@@ -56,6 +55,12 @@ original_text_area = st.text_area(
     help="Please consider the quantity of characters is limited.",
     placeholder="Enter text"
 )
+
+def max(n1,n2):
+    if n1 <= n2:
+        return n2
+    else:
+        return n1
 
 st.write(
     f"You wrote {max(0,{len(original_text_area)})} characters.",
