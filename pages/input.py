@@ -94,6 +94,8 @@ if st.button(":material/send: Submit"):
         structured_llm = llm.with_structured_output(json_schema)
         st.session_state.result = structured_llm.invoke(prompt_value)
         st.write(st.session_state.result)
+        response_dict = st.session_state.result["content"]
+        st.write(response_dict)
         st.write("See results in Output page:")
         st.page_link(
             page="pages/output.py",
