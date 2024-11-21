@@ -74,7 +74,7 @@ json_schema={
     "BiasList": {
       "type": "array",
 	  "minItems": 1,
-      "uniqueItems": true,
+      "uniqueItems": True,
       "items": [
         {
           "type": "object",
@@ -102,7 +102,7 @@ json_schema={
             "FragmentsPresent": {
               "type": "array",
 			  "minItems": 1,
-			  "uniqueItems": true,
+			  "uniqueItems": True,
 			  "description": "List of fragments where the specified bias is detected",
               "items": [
                 {
@@ -127,7 +127,7 @@ json_schema={
 					  "description": "Reformulations based specifically on the specified fragment",
 					  "minItems": 3,
 					  "maxItems": 3,
-					  "uniqueItems": true,
+					  "uniqueItems": True,
                       "items": [
                         {
                           "type": "object",
@@ -227,8 +227,9 @@ if st.button(":material/send: Submit"):
             max_retries=2,
             api_key=st.session_state.openai_api_key
             )
-        structured_llm = llm.with_structured_output(json_schema)
-        st.session_state.result = structured_llm.invoke(prompt_value)
+        #structured_llm = llm.with_structured_output(json_schema)
+        #st.session_state.result = structured_llm.invoke(prompt_value)
+        st.session_state.result = llm.invoke(prompt_value)
         st.write(st.session_state.result)
         st.write("See results in Output page:")
         st.page_link(
