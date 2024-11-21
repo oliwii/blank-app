@@ -1,5 +1,6 @@
 import streamlit as st
 from references.prompttemplate import template
+from references.jsonschema import json_schema
 #from langchain.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.prompts import ChatPromptTemplate
@@ -90,7 +91,8 @@ if st.button(":material/send: Submit"):
             max_retries=2,
             api_key=st.session_state.openai_api_key
             )
-        st.session_state.result = llm.invoke(prompt_value)
+        structured_llm = llm.with_structured_output(json_schema)
+        st.session_state.result = structured_llm.invoke(prompt_value)
         st.write(st.session_state.result)
         st.write("See results in Output page:")
         st.page_link(
@@ -99,7 +101,7 @@ if st.button(":material/send: Submit"):
             icon="🧩" 
         )
     else:
-        st.markdown("Please insert API key in Settings :material/settings:")
+        st.markdown("Please insert OpenAI API key in Settings :material/settings:")
         st.page_link(
             page="pages/settings.py",
             label="Go to Settings :material/arrow_forward:"
