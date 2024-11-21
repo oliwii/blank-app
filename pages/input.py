@@ -74,7 +74,7 @@ json_schema={
     "BiasList": {
       "type": "array",
 	  "minItems": 1,
-      "uniqueItems": True,
+      "uniqueItems": true,
       "items": [
         {
           "type": "object",
@@ -102,7 +102,7 @@ json_schema={
             "FragmentsPresent": {
               "type": "array",
 			  "minItems": 1,
-			  "uniqueItems": True,
+			  "uniqueItems": true,
 			  "description": "List of fragments where the specified bias is detected",
               "items": [
                 {
@@ -127,7 +127,7 @@ json_schema={
 					  "description": "Reformulations based specifically on the specified fragment",
 					  "minItems": 3,
 					  "maxItems": 3,
-					  "uniqueItems": True,
+					  "uniqueItems": true,
                       "items": [
                         {
                           "type": "object",
