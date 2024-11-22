@@ -4,7 +4,7 @@ def single_pills(dictionary):
     bias_options = []
     # Iterar en los elementos de la lista BiasList
     for bias in dictionary["BiasList"]:
-        if bias["BiasDegree"] is not "Bias free":
+        if bias["BiasDegree"] != "Bias free":
             bias_options.append(bias["BiasType"])
     selection = st.pills(
         label="Bias",
@@ -51,16 +51,16 @@ def analysis(bias, bias_analysis_result):
                 
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
                 complex_button = st.button(label="Apply Complex")
-                
 
-    if simple_button:
-                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation))
 
-    if medium_button:
-                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation))
+    #if simple_button:
+    #                st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation))
 
-    if complex_button:
-                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation))
+    #if medium_button:
+    #                st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation))
+
+    #if complex_button:
+    #                st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation))
 
 
 
