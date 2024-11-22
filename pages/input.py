@@ -92,7 +92,12 @@ if st.button(":material/send: Submit"):
             )
         #structured_llm = llm.with_structured_output(json_schema)
         #st.session_state.result = structured_llm.invoke(prompt_value)
-        st.session_state.result = llm.invoke(prompt_value)
+        #st.session_state.result = llm.invoke(prompt_value)
+        # Invoke the model with the prompt
+        response = llm.invoke(prompt_value)
+
+        # Extract only the 'content' field from the response
+        st.session_state.result = response['content']
         st.write(st.session_state.result)
         st.write("See results in Output page:")
         st.page_link(
