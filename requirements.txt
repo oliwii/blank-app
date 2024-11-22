@@ -3,4 +3,3 @@ openai
 langchain-core
 langchain_openai
 langchain
-json
