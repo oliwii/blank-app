@@ -11,7 +11,7 @@ The possible biases are: {include_biases}. Do not include any biases that are no
 There should be one element per bias in "BiasList", so the length of "BiasList" is the same as the possible biases.
 
 In the values for FragmentContent, there should be a text fragment from the article where you have identified the corresponding bias. The reformulations should be based specifically on that fragment, separated into three levels: from least to most modified relative to the original fragment.
-Reformulations are different versions of the original fragment that correct the bias but still conserve the writer's main intention and message. Reformulations shoud be in the same language as the original fragment.
+Reformulations are different versions of the original fragment that correct the bias but still conserve the writer's main intention and message. The reformulations and the explanation shoud be in the same language as the original fragment.
 
 Leave the category, topic, and subtopic keys blank.
 For the Turing test, respond true if you believe the article was written by a human, false otherwise.
