@@ -39,18 +39,20 @@ def analysis(bias, bias_analysis_result):
             st.markdown(item["Explanation"])
             st.markdown(f"#### Fragments where {bias} bias was detected:")
             #fragment is a dictionary of the list item["FragmentsPresent"]
+            fragment_id = 1
             for fragment in item["FragmentsPresent"]:
                 st.markdown(f" *{fragment['FragmentContent']}*.  ***{fragment['FragmentBiasDegree']}***.")
                 st.markdown("##### Possible reformulations")
 
                 simple_reformulation = st.markdown(fragment["Reformulations"][0]["AlternativeText"])
-                simple_button = st.button(label="Apply Simple", key=f"simple_button{fragment["FragmentId"]}")
+                simple_button = st.button(label="Apply Simple", key=f"simple_button{fragment_id}")
                 
                 meduim_reformulation = st.markdown(fragment["Reformulations"][1]["AlternativeText"])               
-                medium_button = st.button(label="Apply Medium", key=f"medium_button{fragment["FragmentId"]}")
+                medium_button = st.button(label="Apply Medium", key=f"medium_button{fragment_id}")
                 
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
-                complex_button = st.button(label="Apply Complex", key=f"complex_button{fragment["FragmentId"]}")
+                complex_button = st.button(label="Apply Complex", key=f"complex_button{fragment_id}")
+                fragment_id += 1
 
 
     if simple_button:
