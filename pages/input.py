@@ -82,7 +82,13 @@ if st.button(":material/send: Submit"):
 
     prompt_value = template.format(intensity_scale=intensity, include_biases=include, article=original_text_area)
     
-    if st.session_state.openai_api_key is not None:
+    if ("openai_api_key" not in st.session_state) or (st.session_state.openai_api_key is None):
+        st.markdown("Please insert OpenAI API key in Settings :material/settings:")
+        st.page_link(
+            page="pages/settings.py",
+            label="Go to Settings :material/arrow_forward:"
+        )
+    else:
         llm = ChatOpenAI(
             model="gpt-4o-mini",
             temperature=0,
@@ -114,9 +120,5 @@ if st.button(":material/send: Submit"):
             label=":rainbow[Go to Output]",
             icon="🧩" 
         )
-    else:
-        st.markdown("Please insert OpenAI API key in Settings :material/settings:")
-        st.page_link(
-            page="pages/settings.py",
-            label="Go to Settings :material/arrow_forward:"
-        )
+    
+        
