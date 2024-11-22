@@ -49,6 +49,59 @@ The JSON you should return is as follows:
                 }}
             ],
             "Explanation": "El sesgo de género es un sesgo definido como ..."
+        }},
+        {{
+            "BiasId": 2,
+            "BiasType": "Sexuality",
+            "BiasDegree": "Moderately biased",
+            "ConfidencePercentage": 97,
+            "FragmentsPresent": [
+                {{
+                    "FragmentId": 1,
+                    "FragmentContent": "Las parejas homosexuales son divertidas",
+                    "FragmentBiasDegree": "Moderately biased",
+                    "Reformulations": [
+                        {{
+                            "ReformulationId": 1,
+                            "ReformulationLevel": "Simple",
+                            "AlternativeText": "xyz"
+                        }},
+                        {{
+                            "ReformulationId": 2,
+                            "ReformulationLevel": "Medium",
+                            "AlternativeText": "wxy"
+                        }},
+                        {{
+                            "ReformulationId": 3,
+                            "ReformulationLevel": "Complex",
+                            "AlternativeText": "vwx"
+                        }}
+                    ]
+                }},
+                {{
+                    "FragmentId": 2,
+                    "FragmentContent": "Los niños criados por parejas homosexuales son más abiertos de mente",
+                    "FragmentBiasDegree": "Weakly biased",
+                    "Reformulations": [
+                        {{
+                            "ReformulationId": 1,
+                            "ReformulationLevel": "Simple",
+                            "AlternativeText": "abc"
+                        }},
+                        {{
+                            "ReformulationId": 2,
+                            "ReformulationLevel": "Medium",
+                            "AlternativeText": "bcd"
+                        }},
+                        {{
+                            "ReformulationId": 3,
+                            "ReformulationLevel": "Complex",
+                            "AlternativeText": "cde"
+                        }}
+                    ]
+                }}
+            ],
+            "Explanation": "El sesgo de orientación sexual es definido como ..."
         }}
     ],
     "TuringTest": true,

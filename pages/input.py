@@ -5,6 +5,7 @@ from references.prompttemplate import template
 from langchain_core.prompts import PromptTemplate
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
+import json
 
 
 st.title("Insert content")
@@ -45,8 +46,8 @@ if "textinput" not in st.session_state:
 if "textcopy" not in st.session_state:
     st.session_state.textcopy=None
 
-if "result" not in st.session_state:
-    st.session_state.result=None
+if "parsed_result" not in st.session_state:
+    st.session_state.parsed_result=None
 
 
 original_text_area = st.text_area(
@@ -92,13 +93,21 @@ if st.button(":material/send: Submit"):
             )
         #structured_llm = llm.with_structured_output(json_schema)
         #st.session_state.result = structured_llm.invoke(prompt_value)
-        #st.session_state.result = llm.invoke(prompt_value)
+        
         # Invoke the model with the prompt
         response = llm.invoke(prompt_value)
 
         # Extract only the 'content' field from the response
-        st.session_state.result = response.content
-        st.write(st.session_state.result)
+        result = response.content
+        st.write(result)
+
+        # Parse the JSON string into a Python dictionary
+        parsed_data = json.loads(result)
+
+        # Store or manipulate the parsed data as needed
+        st.session_state.parsed_result = parsed_data
+
+        # Button to go to Ouptut page
         st.write("See results in Output page:")
         st.page_link(
             page="pages/output.py",

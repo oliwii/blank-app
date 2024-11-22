@@ -69,22 +69,28 @@ colour_hex = [
 ]
 
 #Show chart
-st.altair_chart(barchart(example_bias_dict, st.session_state.bias_level, colour_hex, colour_reference))
+st.altair_chart(barchart(st.session_state.parsed_result, st.session_state.bias_level, colour_hex, colour_reference))
 
 # Write analysis
-selected_bias = single_pills(example_bias_dict)
+selected_bias = single_pills(st.session_state.parsed_result)
 st.write(f"Your selected option: {selected_bias}.")
 if selected_bias is not None:
-    analysis(selected_bias, example_bias_dict)
+    analysis(selected_bias, st.session_state.parsed_result)
+    undo_button = st.button(
+        label = "Undo changes",
+        icon = ":material/undo:"
+	)
+    if undo_button:
+          st.session_state.textcopy = st.session_state.textinput
 
 # Show Turing test results
-turing_test(example_bias_dict)
+turing_test(st.session_state.parsed_result)
 
 with st.container(border=True):
     st.markdown(st.session_state.textcopy)
-    st.write("Lorem Ipsum"*100)
 
 st.divider()
+
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
 st.markdown("##### Was this answer helpful?")
 selected = st.feedback("thumbs")

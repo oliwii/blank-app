@@ -2,7 +2,7 @@ import streamlit as st
 
 def single_pills(dictionary):
     bias_options = []
-    #Iterar en los elementos de la lista BiasList
+    # Iterar en los elementos de la lista BiasList
     for bias in dictionary["BiasList"]:
         if bias["BiasDegree"] is not "Bias free":
             bias_options.append(bias["BiasType"])
@@ -40,20 +40,27 @@ def analysis(bias, bias_analysis_result):
             st.markdown(f"#### Fragments where {bias} bias was detected:")
             #fragment is a dictionary of the list item["FragmentsPresent"]
             for fragment in item["FragmentsPresent"]:
-                st.markdown(f" *{fragment['FragmentContent']}*.  **{fragment['FragmentBiasDegree']}**.")
+                st.markdown(f" *{fragment['FragmentContent']}*.  ***{fragment['FragmentBiasDegree']}***.")
                 st.markdown("##### Possible reformulations")
 
                 simple_reformulation = st.markdown(fragment["Reformulations"][0]["AlternativeText"])
                 simple_button = st.button(label="Apply Simple")
-                if simple_button:
-                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation))
-
+                
                 meduim_reformulation = st.markdown(fragment["Reformulations"][1]["AlternativeText"])               
                 medium_button = st.button(label="Apply Medium")
-                if medium_button:
-                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation))
-
+                
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
                 complex_button = st.button(label="Apply Complex")
-                if complex_button:
+                
+
+    if simple_button:
+                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation))
+
+    if medium_button:
+                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation))
+
+    if complex_button:
                     st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation))
+
+
+
