@@ -44,13 +44,13 @@ def analysis(bias, bias_analysis_result):
                 st.markdown("##### Possible reformulations")
 
                 simple_reformulation = st.markdown(fragment["Reformulations"][0]["AlternativeText"])
-                simple_button = st.button(label="Apply Simple", key="simple_button")
+                simple_button = st.button(label="Apply Simple", key=f"simple_button{fragment["FragmentId"]}")
                 
                 meduim_reformulation = st.markdown(fragment["Reformulations"][1]["AlternativeText"])               
-                medium_button = st.button(label="Apply Medium", key="medium_button")
+                medium_button = st.button(label="Apply Medium", key=f"medium_button{fragment["FragmentId"]}")
                 
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
-                complex_button = st.button(label="Apply Complex", key="complex_button")
+                complex_button = st.button(label="Apply Complex", key=f"complex_button{fragment["FragmentId"]}")
 
 
     if simple_button:
