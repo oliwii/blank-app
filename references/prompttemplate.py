@@ -8,7 +8,7 @@ Respond only with a JSON file in the following structure. It is important that t
 Your task is to classify each bias according to its intensity on a scale of {intensity_scale}.
 
 The possible biases are: {include_biases}. Do not include any biases that are not on this list. Always include all biases on this list. 
-There should be one element per bias in "BiasList", so the length of "BiasList" is the same as the possible biases.
+There should be one element per bias in "BiasList", so the length of "BiasList" is the same as the ammount of possible biases.
 Remember that the bias type "Sexuality" means sexual orientation bias.
 
 In the values for FragmentContent, there should be a text fragment from the article where you have identified the corresponding bias. The reformulations should be based specifically on that fragment, separated into three levels: from least to most modified relative to the original fragment.
