@@ -97,7 +97,7 @@ if st.button(":material/send: Submit"):
         response = llm.invoke(prompt_value)
 
         # Extract only the 'content' field from the response
-        st.session_state.result = response['content']
+        st.session_state.result = response.content
         st.write(st.session_state.result)
         st.write("See results in Output page:")
         st.page_link(
