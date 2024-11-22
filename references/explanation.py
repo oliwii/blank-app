@@ -44,23 +44,23 @@ def analysis(bias, bias_analysis_result):
                 st.markdown("##### Possible reformulations")
 
                 simple_reformulation = st.markdown(fragment["Reformulations"][0]["AlternativeText"])
-                simple_button = st.button(label="Apply Simple")
+                simple_button = st.button(label="Apply Simple", key="simple_button")
                 
                 meduim_reformulation = st.markdown(fragment["Reformulations"][1]["AlternativeText"])               
-                medium_button = st.button(label="Apply Medium")
+                medium_button = st.button(label="Apply Medium", key="medium_button")
                 
                 complex_reformulation = st.markdown(fragment["Reformulations"][2]["AlternativeText"])
-                complex_button = st.button(label="Apply Complex")
+                complex_button = st.button(label="Apply Complex", key="complex_button")
 
 
-    #if simple_button:
-    #                st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation))
+    if simple_button:
+                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], simple_reformulation))
 
-    #if medium_button:
-    #                st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation))
+    if medium_button:
+                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], meduim_reformulation))
 
-    #if complex_button:
-    #                st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation))
+    if complex_button:
+                    st.markdown(replace_fragment(st.session_state.textcopy, fragment["FragmentContent"], complex_reformulation))
 
 
 
