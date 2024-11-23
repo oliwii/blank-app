@@ -105,7 +105,7 @@ if st.button(":material/send: Submit"):
 
         # Extract only the 'content' field from the response
         result = response.content
-        st.write(result)
+        #st.write(result)
 
         # Parse the JSON string into a Python dictionary
         parsed_data = json.loads(result)
